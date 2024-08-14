@@ -1,7 +1,7 @@
 # NAME: Proxy
 # AUTHOR: Max Kaminskiy
 # REPO: https://github.com/mkaminskiy/shadowrocket
-# UPDATED: 2024-08-11 
+# UPDATED: 2024-08-14
 DOMAIN-SUFFIX,ifconfig.me
 DOMAIN-SUFFIX,ipinfo.io
 DOMAIN-SUFFIX,aol.com
@@ -57,3 +57,15 @@ DOMAIN-SUFFIX,vimeocdn.com
 DOMAIN-SUFFIX,x.com
 DOMAIN-KEYWORD,kahoot
 DOMAIN-KEYWORD,instagram
+DOMAIN-SUFFIX,p16-tiktokcdn-com.akamaized.net
+DOMAIN-SUFFIX,tiktokv.com
+DOMAIN-SUFFIX,tiktokcdn.com
+DOMAIN-SUFFIX,musical.ly
+DOMAIN-SUFFIX,muscdn.com
+DOMAIN-SUFFIX,tiktokcdn.com.c.worldfcdn.com
+DOMAIN-SUFFIX,tiktok.com
+DOMAIN-SUFFIX,ns-440.awsdns-55.com
+DOMAIN-SUFFIX,ns-722.awsdns-26.net
+DOMAIN-SUFFIX,ns-1475.awsdns-56.org
+DOMAIN-SUFFIX,ns-1574.awsdns-04.co.uk
+DOMAIN-SUFFIX,tiktokcdn-com.akamaized.net
