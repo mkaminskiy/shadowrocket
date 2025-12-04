@@ -3,6 +3,7 @@
 # REPO: https://github.com/mkaminskiy/shadowrocket
 # UPDATED: 2024-08-14
 DOMAIN-SUFFIX,ifconfig.me
+DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,ipinfo.io
 DOMAIN-SUFFIX,aol.com
 DOMAIN-SUFFIX,browserleaks.com
