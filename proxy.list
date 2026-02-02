@@ -3,6 +3,7 @@
 # REPO: https://github.com/mkaminskiy/shadowrocket
 # UPDATED: 2026-02-02
 DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claude.com
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,ifconfig.me
 DOMAIN-SUFFIX,aistudio.google.com
