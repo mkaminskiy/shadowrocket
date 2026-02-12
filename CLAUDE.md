@@ -8,7 +8,7 @@ This is a configuration repository for VPN client routing rules. Supported clien
 - **Shadowrocket** (iOS) — primary client
 - **V2RayTun** (Android)
 
-Configuration files are served via GitHub raw URLs for auto-update by the clients.
+Configuration files are served via GitHub raw URLs.
 
 ## Files
 
@@ -56,7 +56,54 @@ Each `#`-group from `proxy.list` maps to a **separate rule block** with its own 
 4. **"Голосовые и видеозвонки"** (`proxy`) — all `DST-PORT` entries combined into a single `port` string.
 5. **"Default"** (`direct`) — catch-all, `network: ["tcp"]`.
 
+## Delivery pipeline
+
+```
+proxy.list → JSON → git push → GitHub raw
+                                    ↓
+                          cron (каждые 5 мин) на VPN-сервере
+                                    ↓
+                     /opt/vpn/update-routing.sh
+                     → curl JSON из GitHub
+                     → base64 → nginx snippet
+                     → nginx reload
+                                    ↓
+              V2RayTun обновляет подписку (каждый час)
+              → получает заголовок routing с base64 JSON
+              → применяет маршрутизацию
+```
+
+### Shadowrocket (iOS)
+Shadowrocket читает `proxy.list` напрямую из GitHub raw URL (указан в `update-url` внутри `.conf` файлов, интервал 60 сек).
+
+### V2RayTun (Android)
+V2RayTun получает маршрутизацию через HTTP-заголовок `routing` (base64-encoded JSON) при обновлении подписки 3x-ui. Nginx на VPN-сервере проксирует подписки и инжектит этот заголовок.
+
+## Server infrastructure
+
+- **3x-ui** — панель управления Xray, запущена в Docker (`/home/max/3x-ui/`, `network_mode: host`)
+- **Nginx** — reverse proxy для подписок, добавляет заголовок `routing` с base64 JSON маршрутизации
+- **Xray** — VPN-сервер (порт 443)
+
+### Порты
+- **443** — Xray (VPN трафик)
+- **2096** — Nginx (проксирует подписки, добавляет routing header)
+- **12096** (localhost) — 3x-ui subscription handler (внутренний, проксируется через nginx)
+- **65512** — 3x-ui web panel
+
+### Ключевые файлы на сервере
+- `/opt/vpn/routing.json` — текущий JSON маршрутизации (скачан из GitHub)
+- `/opt/vpn/nginx-routing-header.conf` — сгенерированный nginx snippet с base64 routing в переменных (разбит на чанки по 3500 символов из-за лимита строки nginx)
+- `/opt/vpn/update-routing.sh` — скрипт обновления: скачивает JSON, кодирует в base64, генерирует nginx snippet, делает reload
+- `/etc/cron.d/update-routing` — cron задача (`*/5 * * * *`)
+- `/etc/nginx/sites-available/v2raytun-sub.conf` — конфиг nginx
+
+### HTTP-заголовки подписки (V2RayTun)
+- `routing` — base64-encoded JSON маршрутизации, применяется клиентом автоматически
+- `profile-update-interval: 1` — интервал обновления подписки (1 час)
+
 ## Key Conventions
 
 - Entries in `proxy.list` are grouped by service with `#` comment headers (AI, Meta, Twitter/X, YouTube, Telegram, WhatsApp, etc.)
 - The `.conf` files have `update-url` pointing to their own raw GitHub URL on `main` branch — changes take effect on clients after push
+- After editing `proxy.list`: regenerate JSON, commit, push — server picks up changes within 5 minutes

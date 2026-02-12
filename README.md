@@ -50,4 +50,12 @@ https://raw.githubusercontent.com/mkaminskiy/shadowrocket/main/default.conf
 
 ### V2RayTun (Android)
 
-Импортируйте файл `KaminskiyVPN.v2raytun.routing.json` в настройках маршрутизации приложения.
+Маршрутизация доставляется автоматически через HTTP-заголовок `routing` в подписке 3x-ui. При обновлении подписки V2RayTun применяет правила маршрутизации без ручного импорта.
+
+Для ручного импорта: загрузите `KaminskiyVPN.v2raytun.routing.json` в настройках маршрутизации приложения.
+
+## Как обновляются правила
+
+1. Изменения вносятся в `proxy.list` → генерируется `KaminskiyVPN.v2raytun.routing.json` → push в GitHub
+2. **Shadowrocket**: читает `proxy.list` напрямую из GitHub (автообновление каждые 60 сек)
+3. **V2RayTun**: сервер каждые 5 минут подтягивает JSON из GitHub и отдаёт его в заголовке подписки; клиент обновляет подписку каждый час
