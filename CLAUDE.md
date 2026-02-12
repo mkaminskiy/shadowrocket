@@ -30,22 +30,31 @@ The routing priority is:
 
 ### Rule syntax mapping (proxy.list → V2Ray JSON)
 
-| Shadowrocket (`proxy.list`)  | V2Ray JSON (`routing.json`)       |
-|------------------------------|-----------------------------------|
-| `DOMAIN-SUFFIX,example.com`  | `"domain:example.com"`            |
-| `DOMAIN,api.example.com`     | `"full:api.example.com"`          |
-| `DOMAIN-KEYWORD,foo`         | `"keyword:foo"`                   |
-| `IP-CIDR,x.x.x.x/y,no-resolve` | IP added to `"ip"` array      |
-| `DST-PORT,3478,PROXY`        | Added to `"port"` array           |
+| Shadowrocket (`proxy.list`)        | V2Ray JSON                   |
+|------------------------------------|------------------------------|
+| `DOMAIN-SUFFIX,example.com`        | `"domain:example.com"`       |
+| `DOMAIN,api.example.com`           | `"full:api.example.com"`     |
+| `DOMAIN-KEYWORD,foo`               | `"keyword:foo"`              |
+| `IP-CIDR,x.x.x.x/y,no-resolve`   | added to `"ip"` array        |
+| `DST-PORT,3478,PROXY`              | added to `"port"` string     |
 
-### V2Ray JSON structure
+### V2RayTun JSON format
 
-The JSON file has ordered rules:
-1. `"direct"` — domains/IPs that bypass proxy (local, Kaspersky, etc.) + `geoip:private`
-2. `"direct"` — `geoip:ru`
-3. `"proxy"` — domains from `proxy.list`
-4. `"proxy"` — IPs and ports from `proxy.list`
-5. `"direct"` — catch-all for everything else
+Root object fields: `domainStrategy`, `id` (UUID), `balancers`, `domainMatcher`, `name`, `rules`.
+
+Each rule object has: `__name__` (group label), `id` (UUID), `type` ("field"), `outboundTag`, and traffic matching fields (`domain`, `ip`, `port`, `network`).
+
+Note: `port` is a **string** (e.g. `"3478,3480,5222,596-599"`), not an array.
+
+### V2Ray JSON rule structure
+
+Each `#`-group from `proxy.list` maps to a **separate rule block** with its own `__name__`, `id`, `domain`/`ip` arrays, and `outboundTag`. The full rule order:
+
+1. **"Прямые домены"** (`direct`) — local domains/IPs, Kaspersky, etc. + `geoip:private`. Not generated from proxy.list.
+2. **"Прямые RU"** (`direct`) — `geoip:ru`. Not generated from proxy.list.
+3. **One rule per group from proxy.list** (`proxy`) — e.g. "Google Gemini", "Anthropic", "OpenAI", "Meta", "Twitter/X", "Media", "Youtube", "Video", "TikTok", "Разное", "WhatsApp", "Telegram". Groups with `IP-CIDR` entries (WhatsApp, Telegram) include both `domain` and `ip` arrays in the same rule.
+4. **"Голосовые и видеозвонки"** (`proxy`) — all `DST-PORT` entries combined into a single `port` string.
+5. **"Default"** (`direct`) — catch-all, `network: ["tcp"]`.
 
 ## Key Conventions
 
