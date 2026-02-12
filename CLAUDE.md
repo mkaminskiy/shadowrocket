@@ -77,19 +77,25 @@ proxy.list → JSON → git push → GitHub raw
 Shadowrocket читает `proxy.list` напрямую из GitHub raw URL (указан в `update-url` внутри `.conf` файлов, интервал 60 сек).
 
 ### V2RayTun (Android)
-V2RayTun получает маршрутизацию через HTTP-заголовок `routing` (base64-encoded JSON) при обновлении подписки 3x-ui. Nginx на VPN-сервере проксирует подписки и инжектит этот заголовок.
+V2RayTun получает маршрутизацию через HTTP-заголовок `routing` (base64-encoded JSON) при обновлении подписки 3x-ui. Nginx на VPN-сервере проксирует подписки по HTTPS (Let's Encrypt) и инжектит этот заголовок. V2RayTun требует HTTPS для подписок с публичных хостов (HTTP допускается только с localhost/private IP).
 
 ## Server infrastructure
 
 - **3x-ui** — панель управления Xray, запущена в Docker (`/home/max/3x-ui/`, `network_mode: host`)
-- **Nginx** — reverse proxy для подписок, добавляет заголовок `routing` с base64 JSON маршрутизации
+- **Nginx** — HTTPS reverse proxy для подписок (Let's Encrypt), добавляет заголовок `routing` с base64 JSON маршрутизации
 - **Xray** — VPN-сервер (порт 443)
+- **Certbot** — автообновление Let's Encrypt сертификата; renewal hooks открывают/закрывают порт 80 в UFW
 
 ### Порты
 - **443** — Xray (VPN трафик)
-- **2096** — Nginx (проксирует подписки, добавляет routing header)
+- **2096** — Nginx HTTPS (проксирует подписки, добавляет routing header). V2RayTun требует HTTPS для подписок с публичных хостов.
 - **12096** (localhost) — 3x-ui subscription handler (внутренний, проксируется через nginx)
 - **65512** — 3x-ui web panel
+
+### Настройки подписки в 3x-ui (SQLite: `/home/max/3x-ui/db/x-ui.db`, таблица `settings`)
+- `subPort=12096`, `subListen=127.0.0.1` — подписки слушают только на localhost
+- `subURI` — внешний URL подписки (включая путь), используется для генерации QR-кодов и ссылок в панели. Должен быть `https://` и указывать на nginx (порт 2096), а не на внутренний порт.
+- `subPath` — путь подписки (например `/sub/.../`), входит в `subURI`
 
 ### Ключевые файлы на сервере
 - `/opt/vpn/routing.json` — текущий JSON маршрутизации (скачан из GitHub)
@@ -97,10 +103,13 @@ V2RayTun получает маршрутизацию через HTTP-загол�
 - `/opt/vpn/update-routing.sh` — скрипт обновления: скачивает JSON, кодирует в base64, генерирует nginx snippet, делает reload
 - `/etc/cron.d/update-routing` — cron задача (`*/5 * * * *`)
 - `/etc/nginx/sites-available/v2raytun-sub.conf` — конфиг nginx
+- `/etc/letsencrypt/live/vpn.kaminskiy.me/` — Let's Encrypt сертификат
+- `/etc/letsencrypt/renewal-hooks/pre/open-port80.sh` — открывает порт 80 перед обновлением сертификата
+- `/etc/letsencrypt/renewal-hooks/post/close-port80.sh` — закрывает порт 80 и делает nginx reload после обновления
 
 ### HTTP-заголовки подписки (V2RayTun)
-- `routing` — base64-encoded JSON маршрутизации, применяется клиентом автоматически
-- `profile-update-interval: 1` — интервал обновления подписки (1 час)
+- `routing` — base64-encoded JSON маршрутизации, добавляется nginx, применяется клиентом автоматически при подключении VPN
+- `profile-update-interval` — интервал обновления подписки в часах, проходит от 3x-ui (настраивается в панели)
 
 ## Key Conventions
 
