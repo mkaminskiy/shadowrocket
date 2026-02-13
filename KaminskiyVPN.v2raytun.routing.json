@@ -1,13 +1,13 @@
 {
   "domainStrategy": "AsIs",
-  "id": "4396B44E-79B5-446A-9053-3BD1C311F6F8",
+  "id": "ABF19389-E234-468D-ABE4-88AC89BDEC4F",
   "balancers": [],
   "domainMatcher": "hybrid",
   "name": "Ruleset",
   "rules": [
     {
       "__name__": "Прямые домены",
-      "id": "9664E60D-99FB-4D53-8061-084A3C79153F",
+      "id": "86F42C8B-5C9A-407D-8C32-ED5C74DD5A8B",
       "type": "field",
       "domain": [
         "full:captive.apple.com",
@@ -68,7 +68,7 @@
     },
     {
       "__name__": "Прямые RU",
-      "id": "12435971-E075-434C-BB84-38E4B4C46CDE",
+      "id": "8A6DBFFC-4F4A-4876-983B-2459DCCECCEC",
       "type": "field",
       "ip": [
         "geoip:ru"
@@ -77,7 +77,7 @@
     },
     {
       "__name__": "Google Gemini",
-      "id": "2EAB86FB-EE4C-4BCA-87A7-BE400F2E5C05",
+      "id": "3A19DD5C-761B-4F3F-BFAD-76C286ED190A",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -90,7 +90,7 @@
     },
     {
       "__name__": "Anthropic",
-      "id": "5AA141EB-5C49-4AAA-A2E0-CB0E0E35C24F",
+      "id": "72D94883-A28B-440B-AF85-CC40E19BB370",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -101,7 +101,7 @@
     },
     {
       "__name__": "OpenAI",
-      "id": "C03C066B-7B68-45A1-9235-41A4B889CED0",
+      "id": "172C2A6A-CA3D-4DE8-908E-F6617024B406",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -111,7 +111,7 @@
     },
     {
       "__name__": "Meta",
-      "id": "F367F790-442A-4CA0-AA9B-5BBF4E710CF7",
+      "id": "DCC693B0-EB32-4CA0-A2A8-4CC3C13F59C1",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -138,7 +138,7 @@
     },
     {
       "__name__": "Twitter/X",
-      "id": "49F434C7-4929-484F-B7CD-BEC6ADA683CD",
+      "id": "9DA78425-BA45-494F-8CD4-37BBCC5FDC82",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -154,7 +154,7 @@
     },
     {
       "__name__": "Media",
-      "id": "FC0BC539-7613-4E59-8DC5-70CCD4A44337",
+      "id": "A143649A-AF77-45E9-BA5D-E167639AB123",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -168,7 +168,7 @@
     },
     {
       "__name__": "Youtube",
-      "id": "80C549C7-8891-4D60-B266-56F35EF3777E",
+      "id": "BF14FF72-2134-4884-82D7-64F117E8899F",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -194,7 +194,7 @@
     },
     {
       "__name__": "Video",
-      "id": "2E027DFC-058B-4BE1-A8F0-AA1BAEE5113F",
+      "id": "EB6E06F6-C1EC-42E1-86CF-2CBC717C224C",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -211,7 +211,7 @@
     },
     {
       "__name__": "TikTok",
-      "id": "08A8C8CE-8EE8-4BC8-BA70-16D55AE6E497",
+      "id": "79F14570-1366-4662-9DD2-3E47EE18FCD1",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -225,7 +225,7 @@
     },
     {
       "__name__": "Разное",
-      "id": "F0E47B92-B1D0-4BE0-96C2-19B464EDFA81",
+      "id": "0379BEAA-21F0-46B9-96EA-33A93027BE27",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -282,7 +282,7 @@
     },
     {
       "__name__": "WhatsApp",
-      "id": "F67A23F7-5C24-4E3F-A022-6615B9EA91EC",
+      "id": "97DB7E39-0B21-459B-A888-5396CA3FC99E",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -309,7 +309,7 @@
     },
     {
       "__name__": "Telegram",
-      "id": "E3CFAFA9-37EA-4A47-B7A9-52E33F3D9531",
+      "id": "F9B8F624-EBEC-4729-9C68-7F76CB561411",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -354,14 +354,14 @@
     },
     {
       "__name__": "Голосовые и видеозвонки",
-      "id": "90B40A3C-8A9C-4BC3-82E0-A489BC7055CC",
+      "id": "CA99B32B-5ECA-4760-BEF9-71B7DBC295AC",
       "type": "field",
       "port": "3478,3480,3484,5222,596-599,1400,1930219309",
       "outboundTag": "proxy"
     },
     {
       "__name__": "Default",
-      "id": "B3C23046-E7AF-4473-80A1-220519138511",
+      "id": "74503DC2-3A84-49D6-AF2A-ADCCBBA14529",
       "type": "field",
       "network": [
         "tcp"
