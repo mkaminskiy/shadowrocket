@@ -1,0 +1,54 @@
+name: Update V2RayTun Routing
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'proxy.list'
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-routing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0  # Full history for proper commits
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate routing JSON
+        run: |
+          python3 generate_routing.py
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet KaminskiyVPN.v2raytun.routing.json; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected in routing JSON"
+          else
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected in routing JSON"
+          fi
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add KaminskiyVPN.v2raytun.routing.json
+          git commit -m "auto: regenerate V2RayTun routing from proxy.list
+
+          Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
+          git push

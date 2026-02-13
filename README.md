@@ -56,6 +56,13 @@ https://raw.githubusercontent.com/mkaminskiy/shadowrocket/main/default.conf
 
 ## Как обновляются правила
 
-1. Изменения вносятся в `proxy.list` → генерируется `KaminskiyVPN.v2raytun.routing.json` → push в GitHub
-2. **Shadowrocket**: читает `proxy.list` напрямую из GitHub (автообновление каждые 60 сек)
-3. **V2RayTun**: сервер каждые 5 минут подтягивает JSON из GitHub и отдаёт его в заголовке подписки; клиент обновляет подписку каждый час
+1. Изменения вносятся в `proxy.list` → commit → push в GitHub
+2. **GitHub Actions автоматически** генерирует `KaminskiyVPN.v2raytun.routing.json` и создаёт коммит
+3. **Shadowrocket**: читает `proxy.list` напрямую из GitHub (автообновление каждые 60 сек)
+4. **V2RayTun**: сервер каждые 5 минут подтягивает JSON из GitHub и отдаёт его в заголовке подписки; клиент обновляет подписку каждый час
+
+### Автоматизация
+
+Репозиторий использует GitHub Actions для автоматической генерации V2Ray JSON при изменении `proxy.list`. Подробности в [`AUTOMATION.md`](AUTOMATION.md).
+
+**Важно**: Файл `KaminskiyVPN.v2raytun.routing.json` генерируется автоматически — не редактируйте его вручную!
