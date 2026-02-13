@@ -15,7 +15,6 @@ DOMAIN-SUFFIX,anthropic.com
 #OpenAI
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,chatgpt.com
-
 #Meta
 DOMAIN-SUFFIX,cdninstagram.com
 DOMAIN-SUFFIX,cdnfbsbx.com
@@ -45,7 +44,6 @@ DOMAIN-SUFFIX,twitthat.com
 DOMAIN-SUFFIX,twtkr.com
 DOMAIN-SUFFIX,twttr.com
 DOMAIN-SUFFIX,x.com
-
 #Media
 DOMAIN-SUFFIX,foxnews.com
 DOMAIN-SUFFIX,gladyou.click
@@ -82,7 +80,6 @@ DOMAIN-SUFFIX,disney-portal.my.onetrust.com
 DOMAIN-SUFFIX,disneyplus.bn5x.net
 DOMAIN-SUFFIX,disneyplug.disney.co.jp
 DOMAIN-SUFFIX,disney-plus.net
-
 #Tiktok
 DOMAIN-SUFFIX,tiktokv.com
 DOMAIN-SUFFIX,tiktokcdn.com
@@ -90,7 +87,6 @@ DOMAIN-SUFFIX,tiktokcdn.com.c.worldfcdn.com
 DOMAIN-SUFFIX,p16-tiktokcdn-com.akamaized.net
 DOMAIN-SUFFIX,tiktokcdn-com.akamaized.net
 DOMAIN-SUFFIX,tiktok.com
-
 #Разное
 DOMAIN-SUFFIX,ifconfig.me
 DOMAIN-SUFFIX,ipinfo.io
@@ -141,7 +137,6 @@ DOMAIN-SUFFIX,exler.es
 DOMAIN-KEYWORD,exler
 DOMAIN-KEYWORD,toffler
 DOMAIN-KEYWORD,moffler
-
 # WhatsApp/Telegram/FaceTime — Голос
 # https://faq.whatsapp.com/490531153094849/?cms_platform=iphone&helpref=platform_switcher
 # https://www.netify.ai/resources/protocols/telegram
@@ -208,11 +203,11 @@ IP-CIDR,109.239.140.0/24,no-resolve
 IP-CIDR,139.59.210.98/32,no-resolve
 IP-CIDR,149.154.160.0/20,no-resolve
 IP-CIDR,196.55.216.167/32,no-resolve
-IP-CIDR,2001:67c:4e8::/48,no-resolve
-IP-CIDR,2001:b28:f23c::/47,no-resolve
-IP-CIDR,2001:b28:f23f::/48,no-resolve
-IP-CIDR,2a0a:f280::/29,no-resolve
 IP-CIDR,5.28.192.0/18,no-resolve
 IP-CIDR,91.105.192.0/23,no-resolve
 IP-CIDR,91.108.0.0/16,no-resolve
 IP-CIDR,185.76.151.0/24,no-resolve
+IP-CIDR,2001:67c:4e8::/48,no-resolve
+IP-CIDR,2001:b28:f23c::/47,no-resolve
+IP-CIDR,2001:b28:f23f::/48,no-resolve
+IP-CIDR,2a0a:f280::/29,no-resolve
