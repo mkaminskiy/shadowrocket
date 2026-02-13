@@ -1,13 +1,13 @@
 {
   "domainStrategy": "AsIs",
-  "id": "ABF19389-E234-468D-ABE4-88AC89BDEC4F",
+  "id": "8C46ABEA-34EF-4372-B3F4-7675CD173C0B",
   "balancers": [],
   "domainMatcher": "hybrid",
   "name": "Ruleset",
   "rules": [
     {
       "__name__": "Прямые домены",
-      "id": "86F42C8B-5C9A-407D-8C32-ED5C74DD5A8B",
+      "id": "A0E44D4D-EDA9-4239-93DD-BEEFDFC04EE2",
       "type": "field",
       "domain": [
         "full:captive.apple.com",
@@ -68,7 +68,7 @@
     },
     {
       "__name__": "Прямые RU",
-      "id": "8A6DBFFC-4F4A-4876-983B-2459DCCECCEC",
+      "id": "751EAE76-0E34-4997-A4FE-9D628905675F",
       "type": "field",
       "ip": [
         "geoip:ru"
@@ -77,7 +77,7 @@
     },
     {
       "__name__": "Google Gemini",
-      "id": "3A19DD5C-761B-4F3F-BFAD-76C286ED190A",
+      "id": "39A4E819-1FEF-4A79-801B-149FF7F4D217",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -90,7 +90,7 @@
     },
     {
       "__name__": "Anthropic",
-      "id": "72D94883-A28B-440B-AF85-CC40E19BB370",
+      "id": "668D33AF-2EC2-4076-A6FB-E4E24D5D0399",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -101,7 +101,7 @@
     },
     {
       "__name__": "OpenAI",
-      "id": "172C2A6A-CA3D-4DE8-908E-F6617024B406",
+      "id": "17432819-CA6A-43B7-977C-3A1AE421A66A",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -111,7 +111,7 @@
     },
     {
       "__name__": "Meta",
-      "id": "DCC693B0-EB32-4CA0-A2A8-4CC3C13F59C1",
+      "id": "2A9D9D83-E7B9-410A-A1CF-473E9EB03C64",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -138,7 +138,7 @@
     },
     {
       "__name__": "Twitter/X",
-      "id": "9DA78425-BA45-494F-8CD4-37BBCC5FDC82",
+      "id": "B5852D5C-FA9D-4705-9045-85BED40DE654",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -154,7 +154,7 @@
     },
     {
       "__name__": "Media",
-      "id": "A143649A-AF77-45E9-BA5D-E167639AB123",
+      "id": "B986A061-22DD-4201-90E0-AC86BB0BA304",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -168,7 +168,7 @@
     },
     {
       "__name__": "Youtube",
-      "id": "BF14FF72-2134-4884-82D7-64F117E8899F",
+      "id": "9C6D3FD6-CDE3-4B0A-9E28-D24C86CAB012",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -194,7 +194,7 @@
     },
     {
       "__name__": "Video",
-      "id": "EB6E06F6-C1EC-42E1-86CF-2CBC717C224C",
+      "id": "73BCFAD7-E820-47F0-A49E-053043F83F48",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -211,7 +211,7 @@
     },
     {
       "__name__": "TikTok",
-      "id": "79F14570-1366-4662-9DD2-3E47EE18FCD1",
+      "id": "B0091D61-E01E-4CF4-87C5-020F336595FC",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -225,7 +225,7 @@
     },
     {
       "__name__": "Разное",
-      "id": "0379BEAA-21F0-46B9-96EA-33A93027BE27",
+      "id": "1258E733-DD0A-48FB-82BE-C22DE6063990",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -282,7 +282,7 @@
     },
     {
       "__name__": "WhatsApp",
-      "id": "97DB7E39-0B21-459B-A888-5396CA3FC99E",
+      "id": "93CA641F-CBFC-453B-88C5-98E3D831C3FD",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -309,7 +309,7 @@
     },
     {
       "__name__": "Telegram",
-      "id": "F9B8F624-EBEC-4729-9C68-7F76CB561411",
+      "id": "52FC57AC-0511-44F8-8AA7-9FAC0AE9954B",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -318,6 +318,7 @@
         "domain:cdn-telegram.org",
         "domain:comments.app",
         "domain:contest.com",
+        "domain:fragment.com",
         "domain:graph.org",
         "domain:legra.ph",
         "domain:mbrx.app",
@@ -340,28 +341,33 @@
         "keyword:nicegram"
       ],
       "ip": [
+        "91.105.192.0/23",
+        "91.108.0.0/16",
+        "95.161.64.0/20",
         "109.239.140.0/24",
         "139.59.210.98/32",
         "149.154.160.0/20",
+        "185.76.151.0/24",
         "196.55.216.167/32",
         "2001:67c:4e8::/48",
         "2001:b28:f23c::/47",
+        "2001:b28:f23d::/48",
         "2001:b28:f23f::/48",
         "2a0a:f280::/29",
-        "5.28.192.0/18",
-        "91.108.0.0/16"
+        "2a0a:f280:203::/48",
+        "5.28.192.0/18"
       ]
     },
     {
       "__name__": "Голосовые и видеозвонки",
-      "id": "CA99B32B-5ECA-4760-BEF9-71B7DBC295AC",
+      "id": "2F37141A-7081-44C1-AEB9-8CAE5A6A458A",
       "type": "field",
       "port": "3478,3480,3484,5222,596-599,1400,1930219309",
       "outboundTag": "proxy"
     },
     {
       "__name__": "Default",
-      "id": "74503DC2-3A84-49D6-AF2A-ADCCBBA14529",
+      "id": "C4CEA47E-6182-4C20-A455-9CE55A3A1A0E",
       "type": "field",
       "network": [
         "tcp"
