@@ -8,6 +8,9 @@ on:
       - 'proxy.list'
   workflow_dispatch:  # Allow manual trigger
 
+permissions:
+  contents: write
+
 jobs:
   update-routing:
     runs-on: ubuntu-latest
