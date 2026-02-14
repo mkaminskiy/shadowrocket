@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'proxy.list'
+      - 'generate_routing.py'
   workflow_dispatch:  # Allow manual trigger
 
 permissions:
@@ -27,9 +28,11 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Run tests
+        run: python3 test_generate_routing.py
+
       - name: Generate routing JSON
-        run: |
-          python3 generate_routing.py
+        run: python3 generate_routing.py
 
       - name: Check for changes
         id: check_changes

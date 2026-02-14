@@ -34,7 +34,9 @@ def parse_proxy_list(filename: str) -> Dict[str, Dict[str, List[str]]]:
                 parts = line.split(',')
                 if len(parts) >= 2:
                     port = parts[1]
-                    # Clean up port (remove spaces, special chars like ​)
+                    # Normalize Unicode dashes (en-dash U+2013, em-dash U+2014, etc.) to ASCII hyphen
+                    port = re.sub(r'[\u2010-\u2015\u2212\uFE58\uFE63\uFF0D]', '-', port)
+                    # Remove remaining non-port characters (zero-width spaces, etc.)
                     port = re.sub(r'[^\d\-,]', '', port)
                     if port:
                         dst_ports.append(port)
