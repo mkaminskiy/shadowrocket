@@ -1,13 +1,13 @@
 {
   "domainStrategy": "AsIs",
-  "id": "AE6E7F95-9CB9-4683-80D5-E208F774F164",
+  "id": "057050D6-D1F5-4F17-BDF3-89D790E5D668",
   "balancers": [],
   "domainMatcher": "hybrid",
   "name": "Ruleset",
   "rules": [
     {
       "__name__": "Прямые домены",
-      "id": "F01C6436-D025-4A0E-9AB9-C00495B7BC49",
+      "id": "1936FADD-E724-4B19-9F47-B3735C3D1386",
       "type": "field",
       "domain": [
         "full:captive.apple.com",
@@ -68,7 +68,7 @@
     },
     {
       "__name__": "Прямые RU",
-      "id": "BC8C2EDB-CF7F-46F5-8FC5-327B39E00326",
+      "id": "1A9B96AD-AD6A-42C5-AFF8-A253FCAB1655",
       "type": "field",
       "ip": [
         "geoip:ru"
@@ -77,7 +77,7 @@
     },
     {
       "__name__": "Google Gemini",
-      "id": "FBB1D23A-6C2E-4471-A39C-D93EE8598A1D",
+      "id": "1673B631-3576-4841-8CD1-642BF77D38DA",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -90,7 +90,7 @@
     },
     {
       "__name__": "Antropic",
-      "id": "51C22731-699E-49F1-9F2D-4A46A55AA631",
+      "id": "DE42CE50-0798-4A49-A531-6BCD361A7926",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -101,7 +101,7 @@
     },
     {
       "__name__": "OpenAI",
-      "id": "86CE8E48-D8AE-426C-9B18-A93AEEF06FC0",
+      "id": "C8C60AA4-36F8-4B79-8A99-D4052006BC3E",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -111,7 +111,7 @@
     },
     {
       "__name__": "Meta",
-      "id": "4B24F8B2-63DA-466E-B107-5C4A7532E753",
+      "id": "0814F70F-73CD-4AD9-9C09-1799BCBC286B",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -138,7 +138,7 @@
     },
     {
       "__name__": "Twitter/X",
-      "id": "BDB5E51D-92C8-43D3-981D-948B759C8564",
+      "id": "6375665B-6F08-4E85-B3B7-7F82A661200A",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -154,7 +154,7 @@
     },
     {
       "__name__": "Media",
-      "id": "53499D81-922E-44CC-B063-63C1D050C52C",
+      "id": "98380780-2310-45EF-A6C4-0D7212EC20C2",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -168,7 +168,7 @@
     },
     {
       "__name__": "Youtube",
-      "id": "9E23B0B3-4BEC-4477-A600-86884B033F0A",
+      "id": "172E67C2-4F9F-46B3-B1CE-B334427A648D",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -194,7 +194,7 @@
     },
     {
       "__name__": "Video",
-      "id": "E89CA3CD-81DE-4DE1-831A-1A239A3B2FCC",
+      "id": "6B8E2DA5-8EEA-4469-B828-B4E09A826FB5",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -211,7 +211,7 @@
     },
     {
       "__name__": "Tiktok",
-      "id": "F8F27F43-C622-48FE-A12C-963CC8CB4647",
+      "id": "A1D97A9A-D2E4-464E-B1B7-FC07C89C1F3A",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -225,7 +225,7 @@
     },
     {
       "__name__": "Разное",
-      "id": "95378DC0-02A9-491D-B1C9-1E8F9770F853",
+      "id": "77907567-B83E-41DA-BC26-BC63580CC9B5",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -282,7 +282,7 @@
     },
     {
       "__name__": "Whatsapp networks",
-      "id": "F36CC236-D216-4757-89D3-72CC0285E831",
+      "id": "3BA316D0-4505-4A5C-9788-E8BA94DFF66F",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -309,7 +309,7 @@
     },
     {
       "__name__": "Telegram domains and CIDR",
-      "id": "5DB5932A-D4B6-494C-AC80-13E681B4BC90",
+      "id": "00881AA1-928F-4EFE-8A83-2F3671DBFD61",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -356,14 +356,14 @@
     },
     {
       "__name__": "Голосовые и видеозвонки",
-      "id": "DDD6E6C5-1EBC-4BB5-8E6E-EAA1D62105BB",
+      "id": "5F7F6C0B-87AD-448D-B1C5-B4D9FB118567",
       "type": "field",
       "port": "3478,3480,3484,5222,596-599,1400,19302-19309",
       "outboundTag": "proxy"
     },
     {
       "__name__": "Default",
-      "id": "3B6EDB3E-E068-4A88-AFDA-5D779DB23552",
+      "id": "2C89B5A2-2410-4843-82A7-D41DA0F19057",
       "type": "field",
       "network": [
         "tcp"
