@@ -2,6 +2,19 @@
 # AUTHOR: Max Kaminskiy
 # REPO: https://github.com/mkaminskiy/shadowrocket
 # UPDATED: 2026-02-02
+#BrawlStars
+DOMAIN-SUFFIX,supercell.com
+DOMAIN-SUFFIX,supercell.net
+DOMAIN-SUFFIX,brawlstars.com
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,google.com
+DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,akamaized.net
+DOMAIN-SUFFIX,akamai.net
+DOMAIN-SUFFIX,cloudfront.net
+DOMAIN-SUFFIX,appsflyer.com
+DOMAIN-SUFFIX,app-measurement.com
 #Google Gemini
 DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,gemini.google.com
