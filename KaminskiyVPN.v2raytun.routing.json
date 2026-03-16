@@ -1,13 +1,13 @@
 {
   "domainStrategy": "AsIs",
-  "id": "5BE2FE55-8A79-4DD2-8C50-83135368827E",
+  "id": "809B61F1-135D-473B-9267-8B76B055BCD5",
   "balancers": [],
   "domainMatcher": "hybrid",
   "name": "Ruleset",
   "rules": [
     {
       "__name__": "Прямые домены",
-      "id": "59040777-09F3-4925-B781-45EAEB711149",
+      "id": "17E9CC6B-53A8-495E-8379-F412AC8CE265",
       "type": "field",
       "domain": [
         "full:captive.apple.com",
@@ -68,7 +68,7 @@
     },
     {
       "__name__": "Прямые RU",
-      "id": "8B8415AA-6AFB-46DF-87CD-8E2A8E448DBA",
+      "id": "C59326E5-93B6-4E1A-BC37-D53AF9C69DDB",
       "type": "field",
       "ip": [
         "geoip:ru"
@@ -77,7 +77,7 @@
     },
     {
       "__name__": "BrawlStars",
-      "id": "9CDB307A-443A-464C-9D60-820CC9ED142E",
+      "id": "FD47C6AF-0816-4B83-A9E7-6100852363C1",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -97,7 +97,7 @@
     },
     {
       "__name__": "Google Gemini",
-      "id": "430DEC4B-E77E-46E1-95F5-35054B6C17C3",
+      "id": "EFD75E3C-2AD6-4254-A68A-ECEEF1A16234",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -110,7 +110,7 @@
     },
     {
       "__name__": "Antropic",
-      "id": "AB849D49-0468-4738-84DB-6ECFA625D95A",
+      "id": "2BF9358E-3EED-4FC1-8B26-42FE109F06BE",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -121,7 +121,7 @@
     },
     {
       "__name__": "OpenAI",
-      "id": "58D2FDCC-190B-43BF-A5AC-A677245A1387",
+      "id": "AA7A7D7F-57BB-45D9-98F4-F00B876EA82B",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -131,7 +131,7 @@
     },
     {
       "__name__": "Meta",
-      "id": "D56A7AA2-FF7B-407C-A4C0-2442C2FF955C",
+      "id": "6D3E549C-0267-41D6-B26B-4EED9BECCE2B",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -158,7 +158,7 @@
     },
     {
       "__name__": "Twitter/X",
-      "id": "38BD5654-DCCA-44FA-B938-84D1DA3B0716",
+      "id": "7F809B3F-9660-47B2-921B-0D17E0C5C3E9",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -174,7 +174,7 @@
     },
     {
       "__name__": "Media",
-      "id": "C44279FE-4829-4C9F-9797-83A9A6CDE131",
+      "id": "14BFD8A7-C3D4-42A5-BD66-FAA0E17B604F",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -188,7 +188,7 @@
     },
     {
       "__name__": "Youtube",
-      "id": "1A4E8B90-1E70-4693-A502-3509395A7FDF",
+      "id": "AC251525-0C83-43DA-9A58-E8881233B6CF",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -214,7 +214,7 @@
     },
     {
       "__name__": "Video",
-      "id": "CDB4D909-2532-4F82-AFE7-08F993D2159D",
+      "id": "EC4B5375-8288-4701-83E3-2D94430277DB",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -231,7 +231,7 @@
     },
     {
       "__name__": "Tiktok",
-      "id": "A5F825FA-B79B-4B4B-BD86-2823093AF56F",
+      "id": "89027B0E-792C-44F4-919D-BBF9474B2890",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -245,7 +245,7 @@
     },
     {
       "__name__": "Разное",
-      "id": "09463427-CC27-4900-B2DD-9F1A642FC28A",
+      "id": "A0521D81-9BE1-4988-AF90-909332CFA565",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -305,7 +305,7 @@
     },
     {
       "__name__": "Whatsapp networks",
-      "id": "25BDB913-81CA-499A-AA98-283F5252770A",
+      "id": "FB53F68B-D6B5-4989-B675-35380FB78FDC",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -332,10 +332,12 @@
     },
     {
       "__name__": "Telegram domains and CIDR",
-      "id": "E1FF4F4B-F6C8-448A-A801-4AF684726D5D",
+      "id": "72B466BB-F2BF-48CF-9D2E-293216214AE3",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
+        "domain:booking.com",
+        "domain:amazon.de",
         "full:api.imem.app",
         "full:api.swiftgram.app",
         "domain:cdn-telegram.org",
@@ -387,14 +389,14 @@
     },
     {
       "__name__": "Голосовые и видеозвонки",
-      "id": "0779F3EA-F76F-4A2D-8CF7-501FADB53DC0",
+      "id": "5E23F2C0-5361-4775-82FE-4F5D4EFF6B79",
       "type": "field",
       "port": "3478,3480,3484,5222,596-599,1400,19302-19309",
       "outboundTag": "proxy"
     },
     {
       "__name__": "Default",
-      "id": "5141EB8F-66EE-4779-91CD-1B1B79EF21C7",
+      "id": "C55573FB-B784-4A05-8E3F-7101B13E5B9C",
       "type": "field",
       "network": [
         "tcp"
