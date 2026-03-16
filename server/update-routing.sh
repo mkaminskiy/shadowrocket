@@ -18,7 +18,7 @@ log() {
 
 # Download fresh JSON
 log "Downloading JSON from $URL..."
-curl -sf "$URL" -o "${JSON}.tmp"
+curl -sf -H 'Cache-Control: no-cache' "$URL" -o "${JSON}.tmp"
 log "Downloaded $(wc -c < "${JSON}.tmp") bytes"
 
 # Skip if unchanged

@@ -25,12 +25,26 @@ If a group contains BOTH domain AND IP-CIDR entries, they end up in a single rul
 
 ## Workflow after editing proxy.list
 
-1. **Generate JSON:** `python3 generate_routing.py` — review the output
-2. **Run tests:** `python3 -m pytest test_generate_routing.py`
-3. **Commit and push** — GitHub Actions will also regenerate the JSON
-4. **Update servers:**
+1. **`git pull`** first — ensure you have the latest proxy.list
+2. **Generate JSON:** `python3 generate_routing.py` — review the output
+3. **Run tests:** `python3 -m pytest test_generate_routing.py`
+4. **Commit and push** — GitHub Actions will also regenerate the JSON
+5. **Deploy update-routing.sh** (if it changed):
    ```bash
-   ssh vpn.kaminskiy.me '/opt/vpn/update-routing.sh -v'
-   ssh vpn-de.kaminskiy.me '/opt/vpn/update-routing.sh -v'
+   scp server/update-routing.sh vpn.kaminskiy.me:/opt/vpn/update-routing.sh
+   scp server/update-routing.sh vpn-de.kaminskiy.me:/opt/vpn/update-routing.sh
    ```
-5. **Verify:** after push, wait ~5 min (cron pulls updates) or manually run update-routing.sh on servers
+6. **Update servers:**
+   ```bash
+   ssh vpn.kaminskiy.me 'sudo /opt/vpn/update-routing.sh -v'
+   ssh vpn-de.kaminskiy.me 'sudo /opt/vpn/update-routing.sh -v'
+   ```
+7. **Verify:** after push, wait ~5 min (cron pulls updates) or manually run update-routing.sh on servers
+
+## Caching note
+
+`update-routing.sh` sends `Cache-Control: no-cache` header to bypass GitHub raw CDN cache. If GitHub still serves stale content, fallback: copy the JSON directly:
+```bash
+scp KaminskiyVPN.v2raytun.routing.json vpn.kaminskiy.me:/opt/vpn/routing.json
+ssh vpn.kaminskiy.me 'sudo /opt/vpn/update-routing.sh -v'
+```
