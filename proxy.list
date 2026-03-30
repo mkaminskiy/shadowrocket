@@ -100,6 +100,17 @@ DOMAIN-SUFFIX,tiktokcdn.com.c.worldfcdn.com
 DOMAIN-SUFFIX,p16-tiktokcdn-com.akamaized.net
 DOMAIN-SUFFIX,tiktokcdn-com.akamaized.net
 DOMAIN-SUFFIX,tiktok.com
+#Snapchat
+DOMAIN-SUFFIX,snapchat.com
+DOMAIN-SUFFIX,snap.com
+DOMAIN-SUFFIX,sc-cdn.net
+DOMAIN-SUFFIX,sc-corp.net
+DOMAIN-SUFFIX,sc-gw.com
+DOMAIN-SUFFIX,sc-static.net
+DOMAIN-SUFFIX,sc-prod.net
+DOMAIN-SUFFIX,snapkit.com
+DOMAIN-SUFFIX,feelinsonice.com
+DOMAIN-SUFFIX,bitmoji.com
 #Разное
 DOMAIN-SUFFIX,ifconfig.me
 DOMAIN-SUFFIX,ipinfo.io
