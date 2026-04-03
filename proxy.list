@@ -112,6 +112,9 @@ DOMAIN-SUFFIX,snapkit.com
 DOMAIN-SUFFIX,feelinsonice.com
 DOMAIN-SUFFIX,bitmoji.com
 #Разное
+DOMAIN-SUFFIX,booking.com
+DOMAIN-SUFFIX,amazon.de
+DOMAIN-SUFFIX,kaminskiy.me
 DOMAIN-SUFFIX,ifconfig.me
 DOMAIN-SUFFIX,ipinfo.io
 DOMAIN-SUFFIX,aol.com
@@ -204,9 +207,6 @@ IP-CIDR,208.43.122.128/27,no-resolve
 IP-CIDR,34.224.0.0/12,no-resolve
 IP-CIDR,50.22.198.204/30,no-resolve
 IP-CIDR,54.242.0.0/15,no-resolve
-#MTProxy FakeTLS
-DOMAIN-SUFFIX,booking.com
-DOMAIN-SUFFIX,amazon.de
 # Telegram domains and CIDR
 DOMAIN,api.imem.app
 DOMAIN,api.swiftgram.app
