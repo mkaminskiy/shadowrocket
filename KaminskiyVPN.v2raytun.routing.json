@@ -1,13 +1,13 @@
 {
   "domainStrategy": "AsIs",
-  "id": "D16878C4-3D89-4972-A926-DC56378CDBF2",
+  "id": "26390DF8-B3E6-4402-B433-534E368F05CF",
   "balancers": [],
   "domainMatcher": "hybrid",
   "name": "Ruleset",
   "rules": [
     {
       "__name__": "Прямые домены",
-      "id": "A1DDBA77-F3BB-4A33-891E-245DAD7B7799",
+      "id": "DABDDADE-60C1-4B17-A4C4-1758C659C1B6",
       "type": "field",
       "domain": [
         "full:captive.apple.com",
@@ -68,7 +68,7 @@
     },
     {
       "__name__": "Прямые RU",
-      "id": "B0D083E6-DD71-4143-BE4F-7DDA2345A1F1",
+      "id": "622235A9-5EEF-4023-A499-4EB63EE5436C",
       "type": "field",
       "ip": [
         "geoip:ru"
@@ -77,7 +77,7 @@
     },
     {
       "__name__": "BrawlStars",
-      "id": "75B2A920-9642-4F75-A9A0-C89813F790C6",
+      "id": "004F153F-877F-4D71-896A-FD8A206EF208",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -97,7 +97,7 @@
     },
     {
       "__name__": "Google Gemini",
-      "id": "1AD91CC2-324E-4EFF-A036-4E4D6B29765D",
+      "id": "23E32878-6EAC-47DE-8CF0-EC3E6BD1DE14",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -110,7 +110,7 @@
     },
     {
       "__name__": "Antropic",
-      "id": "028F1267-E7A5-42FA-9393-EBB76001E2C5",
+      "id": "793CBAF3-1331-45A6-B07C-7602BE80B939",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -121,7 +121,7 @@
     },
     {
       "__name__": "OpenAI",
-      "id": "0B4D2898-34AF-4B57-9025-7639AA833EA2",
+      "id": "C7CEF70D-A474-49AB-95BA-45B45B4A0FAB",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -131,7 +131,7 @@
     },
     {
       "__name__": "Meta",
-      "id": "47AB86C1-80C0-4264-974B-E4B410318EC2",
+      "id": "FF1E66D7-E77F-46BA-87FD-1E16BCBD5D54",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -158,7 +158,7 @@
     },
     {
       "__name__": "Twitter/X",
-      "id": "E72DFCDF-B792-45A6-90DD-67F2B1030371",
+      "id": "4147B5EA-CF32-4023-9F86-57AE24F77FE7",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -174,7 +174,7 @@
     },
     {
       "__name__": "Media",
-      "id": "D350197A-8AAC-4D28-8FF2-E958E4491B54",
+      "id": "D36B63EE-4203-4912-8486-9B092F2A3737",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -188,7 +188,7 @@
     },
     {
       "__name__": "Youtube",
-      "id": "983B8276-3B0E-45D2-BAAF-EDAC8EA47429",
+      "id": "763B0ACA-E321-47B7-9E61-1D890F258D3A",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -214,7 +214,7 @@
     },
     {
       "__name__": "Video",
-      "id": "C46A49B2-5DFD-49ED-8F18-2972ACE5D632",
+      "id": "5996F5C5-BAE2-4C5A-9418-C3D7DD9D1E88",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -231,7 +231,7 @@
     },
     {
       "__name__": "Tiktok",
-      "id": "7BB3FB73-F520-4523-95C8-7CAE3B60D6A5",
+      "id": "7485CF30-284F-447A-8CC8-9843B4908E47",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -245,7 +245,7 @@
     },
     {
       "__name__": "Snapchat",
-      "id": "6598F4EE-B51F-4F3E-90DC-FC5C725A4E77",
+      "id": "DFBE5711-C519-41D3-B945-A35FEE959973",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -263,11 +263,12 @@
     },
     {
       "__name__": "Разное",
-      "id": "CA0DF165-09F0-4B7C-B1FC-9C295FD8ABDA",
+      "id": "DD1F46E9-6D2B-49C4-9348-C442E94B0BFB",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
         "domain:micheldumas.com",
+        "domain:pushbr.com",
         "domain:seeed.cc",
         "domain:seeedstudio.com",
         "domain:thuisbezorgd.nl",
@@ -332,7 +333,7 @@
     },
     {
       "__name__": "Whatsapp networks",
-      "id": "6795400C-DDB1-4B40-9D1A-81DC760C648D",
+      "id": "073FE2AB-0D3F-4499-B0A5-7A78D4FA87A7",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -346,7 +347,7 @@
     },
     {
       "__name__": "Meta/WhatsApp current IP ranges (AS32934, AS63293)",
-      "id": "986C7FBE-7F3C-4E2B-BB22-7565E28CC113",
+      "id": "8E818ADB-F3CE-472C-81FE-DFB5C1A1F1C6",
       "type": "field",
       "outboundTag": "proxy",
       "ip": [
@@ -362,7 +363,7 @@
     },
     {
       "__name__": "Telegram domains and CIDR",
-      "id": "2E061B49-B9B0-4D65-9D19-71D64B05E7C8",
+      "id": "30642948-6333-49C5-9D91-597042C53591",
       "type": "field",
       "outboundTag": "proxy",
       "domain": [
@@ -417,14 +418,14 @@
     },
     {
       "__name__": "Голосовые и видеозвонки",
-      "id": "BC68C07D-60C5-48A9-9A96-1146460AA43A",
+      "id": "11033B86-6665-4135-8048-140FFE5B5699",
       "type": "field",
       "port": "3478,3480,3484,5222,596-599,1400,19302-19309",
       "outboundTag": "proxy"
     },
     {
       "__name__": "Default",
-      "id": "D67F63E5-E104-4139-ACB9-AAA7900116A4",
+      "id": "0827CB8B-50FF-4C60-806C-A6160E3727E6",
       "type": "field",
       "network": [
         "tcp"
